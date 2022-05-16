@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="paliwo.css" rel="stylesheet" type="text/css">    
+</head>
+ <body>
+    
+<body>
+  <div id="wszystko">
+  <h1>Kalkulator kosztów paliwa</h1>
+    <table>
+      <div>
+        <input type="radio" id="przycisk1" name="przycisk" checked>
+        <label for="huey">Benzyna</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="przycisk2" name="przycisk" checked>
+        <label for="dewey">Ropa</label>
+      </div>
+      <label>Ile litrów:</br><input type="number" id="ile"> </label> </br></br>
+    </table>
+    
+    <input id="przycisk3" type="button" value="Sprawdź" onclick="paliwo()">
+  
+  </div>  
+  <div id="wynik"></div>
+    
+    <script>
+  
+      function paliwo() {
+        var przycisk1 = document.getElementById("przycisk1");
+        var przycisk2 = document.getElementById("przycisk2");
+        
+        /*wartość*/
+        var ile = document.getElementById("ile").value;
+  
+        if (przycisk1.checked === true) {
+          var typ = 6.70;
+          var suma = typ * ile;
+          document.getElementById("wynik").innerHTML = "Koszt to " + suma + " zł";
+        }
+  
+        else if (przycisk1.checked === false) {
+          var typ = 7.5;
+          var suma = typ * ile;
+  
+          document.getElementById("wynik").innerHTML = "Koszt to " + suma + " zł";
+  
+        }
+        else {
+  
+          document.getElementById("wynik").innerHTML = "Koszt paliwa 0 zł";
+        }
+      }
+  
+  
+    </script>
+  </body>
+  
+  </html>
